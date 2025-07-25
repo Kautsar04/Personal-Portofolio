@@ -33,12 +33,12 @@ export default function NavbarComponent({
 
   return (
     <Navbar
-  isBordered
-  shouldHideOnScroll
-  isMenuOpen={isMenuOpen}
-  onMenuOpenChange={setIsMenuOpen}
-  className="bg-white dark:bg-gray-900 text-black dark:text-white px-4 py-2"
->
+      isBordered
+      shouldHideOnScroll
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+      className="bg-white dark:bg-gray-900 text-black dark:text-white px-4 py-2"
+    >
       {/* Toggle + Brand (mobile) */}
       <NavbarContent className="md:hidden" justify="start">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
@@ -46,7 +46,7 @@ export default function NavbarComponent({
 
       <NavbarContent className="md:hidden" justify="center">
         <NavbarBrand>
-          <Link href="/" className="font-bold text-lg">
+          <Link href="/" className="text-textColor">
             {t("home")}
           </Link>
         </NavbarBrand>
@@ -54,7 +54,7 @@ export default function NavbarComponent({
 
       {/* Brand (desktop) */}
       <NavbarBrand className="hidden md:flex">
-        <Link href="/" className="font-bold text-lg">
+        <Link href="/" className="text-textColor">
           {t("home")}
         </Link>
       </NavbarBrand>
@@ -63,24 +63,24 @@ export default function NavbarComponent({
       <NavbarContent className="hidden md:flex" justify="center">
         {menuItems.map(({ label, href, active }, idx) => (
           <NavbarItem key={idx} isActive={!!active}>
-            <Link href={href}>{label}</Link>
+            <Link href={href} className="text-textColor">{label}</Link>
           </NavbarItem>
         ))}
       </NavbarContent>
 
       {/* Theme & Lang Button (all viewports) */}
       <NavbarContent justify="end" className="gap-3 px-2">
-  <NavbarItem>
-    <Button onPress={toggleLanguage} size="md" className="min-w-[80px] px-4 py-2 text-sm">
-      🌐 {i18n.language.toUpperCase()}
-    </Button>
-  </NavbarItem>
-  <NavbarItem>
-    <Button onPress={toggleDark} size="md" className="min-w-[80px] px-4 py-2 text-sm">
-      🌓 Theme
-    </Button>
-  </NavbarItem>
-</NavbarContent>
+        <NavbarItem>
+          <Button onPress={toggleLanguage} size="md" className="min-w-[80px] px-4 py-2 text-sm">
+            🌐 {i18n.language.toUpperCase()}
+          </Button>
+        </NavbarItem>
+        <NavbarItem>
+          <Button onPress={toggleDark} size="md" className="min-w-[80px] px-4 py-2 text-sm">
+            🌓 Theme
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
 
       {/* Dropdown Menu (mobile) */}
       <NavbarMenu>
