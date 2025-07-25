@@ -4,10 +4,9 @@ const {heroui} = require("@heroui/react");
 module.exports = {
   darkMode: 'class', // pakai class 'dark' untuk switch
   content: [
-		"./index.html",
-		"./src/**/*.{js,ts,jsx,tsx}",
-		"./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
-	],
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
