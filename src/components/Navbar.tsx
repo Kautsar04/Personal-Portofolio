@@ -33,12 +33,12 @@ export default function NavbarComponent({
 
   return (
     <Navbar
-      isBordered
-      shouldHideOnScroll
-      isMenuOpen={isMenuOpen}
-      onMenuOpenChange={setIsMenuOpen}
-      className="bg-white dark:bg-gray-900 text-black dark:text-white shadow-md z-50 fixed top-0 left-0 w-full"
-    >
+  isBordered
+  shouldHideOnScroll
+  isMenuOpen={isMenuOpen}
+  onMenuOpenChange={setIsMenuOpen}
+  className="bg-white dark:bg-gray-900 text-black dark:text-white px-4 py-2"
+>
       {/* Toggle + Brand (mobile) */}
       <NavbarContent className="md:hidden" justify="start">
         <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
@@ -69,18 +69,18 @@ export default function NavbarComponent({
       </NavbarContent>
 
       {/* Theme & Lang Button (all viewports) */}
-      <NavbarContent justify="end">
-        <NavbarItem>
-          <Button onPress={toggleLanguage} size="sm">
-            🌐 {i18n.language.toUpperCase()}
-          </Button>
-        </NavbarItem>
-        <NavbarItem>
-          <Button onPress={toggleDark} size="sm">
-            🌓 Theme
-          </Button>
-        </NavbarItem>
-      </NavbarContent>
+      <NavbarContent justify="end" className="gap-3 px-2">
+  <NavbarItem>
+    <Button onPress={toggleLanguage} size="md" className="min-w-[80px] px-4 py-2 text-sm">
+      🌐 {i18n.language.toUpperCase()}
+    </Button>
+  </NavbarItem>
+  <NavbarItem>
+    <Button onPress={toggleDark} size="md" className="min-w-[80px] px-4 py-2 text-sm">
+      🌓 Theme
+    </Button>
+  </NavbarItem>
+</NavbarContent>
 
       {/* Dropdown Menu (mobile) */}
       <NavbarMenu>

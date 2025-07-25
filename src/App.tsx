@@ -37,7 +37,7 @@ function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Router basename={import.meta.env.VITE_PUBLIC_URL}>
-        <div className="pt-20 min-h-screen bg-background text-textColor transition-colors">
+        <div className="min-h-screen bg-background text-textColor transition-colors">
           <NavbarComponent toggleDark={toggleDark} toggleLanguage={toggleLanguage} />
           <Routes>
             <Route path="/" element={<Home />} />
